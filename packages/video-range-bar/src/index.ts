@@ -23,6 +23,8 @@ export default class VideoRangeBar {
   private sliderOffsetRight: number;
   private sliderWidth: number;
   private theme: string;
+  private moveType: number = 0; // 0 不能移动 1 移动 2：左边， 3： 右边
+  private preX: number = 0;
 
   constructor(config: Config) {
     const {
@@ -50,6 +52,7 @@ export default class VideoRangeBar {
     this.theme = theme;
 
     this.createTemplate();
+    this.addEventListener();
   }
 
   createTemplate() {
@@ -69,9 +72,48 @@ export default class VideoRangeBar {
     el.innerHTML = template;
   }
 
+  // 鼠标按下
+  mouseDown(e: MouseEvent, moveType: number) {
+    const { clientX } = e;
+    this.moveType = moveType;
+    this.preX = clientX;
+  }
+
+  // 鼠标松开
+  mouseUp() {
+    this.preX = 0;
+    if (this.moveType === 0) return;
+    this.moveType = 0;
+  }
+
+  // 鼠标移动
+  mouseMove(e: MouseEvent) {
+    const { clientX } = e;
+    let range = clientX - this.preX;
+    if (range < 0) {
+    }
+  }
+
+  // 触摸开始
+  touchStart(e: TouchEvent, type: number) {
+    const { touches } = e;
+    this.moveType = type;
+    this.preX = touches[0].clientX;
+  }
+  // 触摸移动
+  touchMove(e: TouchEvent) {
+    const { touches } = e;
+  }
+
+  // 触摸结束
+  touchEnd() {
+    this.mouseUp();
+  }
+
+  // 监听事件
   addEventListener() {
     const { el } = this;
-
+    const that = this;
     const sliderLeftDom = el.querySelector(
       '.video-range-bar-left',
     ) as HTMLElement;
@@ -79,39 +121,69 @@ export default class VideoRangeBar {
       '.video-range-bar-right',
     ) as HTMLElement;
 
-    let self = this;
-    const touchstartFun = (e: TouchEvent | MouseEvent) => {
-      e.preventDefault();
-      const po = self.getPosition(e);
-      if (!po) return;
-    };
-    const touchmoveFun = (e: TouchEvent | MouseEvent) => {
-      if (self.isActive) {
-        const po = self.getPosition(e);
-        if (!po) return;
-        self.updateCanvas(po);
-      }
-    };
-    const touchendFun = (_e: TouchEvent | MouseEvent) => {
-      if (self.isActive) {
-        self.isActive = false;
-        self.draw();
-        // 这里应该把数据传出去
-        // 重制绘图
-        self.onChange(self.getPassword());
-        self.initCanvas();
-      }
-    };
-
     // 设备兼容
     if ('ontouchstart' in document) {
-      sliderLeftDom.addEventListener('touchstart', touchstartFun, false);
-      document.addEventListener('touchmove', touchmoveFun, false);
-      document.addEventListener('touchend', touchendFun, false);
+      sliderLeftDom.addEventListener(
+        'touchstart',
+        function (e) {
+          that.touchStart(e, 2);
+        },
+        false,
+      );
+
+      sliderRightDom.addEventListener(
+        'touchstart',
+        function (e) {
+          that.touchStart(e, 3);
+        },
+        false,
+      );
+
+      document.addEventListener(
+        'touchmove',
+        function (e) {
+          that.touchMove(e);
+        },
+        false,
+      );
+      document.addEventListener(
+        'touchend',
+        function (e) {
+          that.touchEnd();
+        },
+        false,
+      );
     } else {
-      sliderLeftDom.addEventListener('mousedown', touchstartFun, false);
-      document.addEventListener('mousemove', touchmoveFun, false);
-      document.addEventListener('mouseup', touchendFun, false);
+      sliderLeftDom.addEventListener(
+        'mousedown',
+        function (e) {
+          that.mouseDown(e, 2);
+        },
+        false,
+      );
+
+      sliderRightDom.addEventListener(
+        'mousedown',
+        function (e) {
+          that.mouseDown(e, 3);
+        },
+        false,
+      );
+
+      document.addEventListener(
+        'mousemove',
+        function (e) {
+          that.mouseMove(e);
+        },
+        false,
+      );
+      document.addEventListener(
+        'mouseup',
+        function (e) {
+          that.mouseUp();
+        },
+        false,
+      );
     }
   }
 
@@ -119,12 +191,10 @@ export default class VideoRangeBar {
    * 获取点击的位置坐标
    * @param e
    */
-  getPosition(e: TouchEvent | MouseEvent): Coordinate | void {
+  getPosition(e: TouchEvent | MouseEvent) {
     if (!(e.currentTarget instanceof Element)) return;
-
     const rect = e.currentTarget.getBoundingClientRect();
     const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
-    return { x: clientX - rect.left, y: clientY - rect.top };
+    return { x: clientX - rect.left };
   }
 }
