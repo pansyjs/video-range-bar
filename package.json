@@ -1,5 +1,5 @@
 {
-  "private": true,
+  "private": false,
   "name": "video-range-bar",
   "version": "1.0.0",
   "scripts": {
