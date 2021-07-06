@@ -1,7 +1,7 @@
 {
   "name": "video-range-bar",
   "version": "1.0.1",
-  "main": "index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "keywords": [
     "video",
@@ -32,5 +32,6 @@
   },
   "bugs": {
     "url": "https://github.com/chenguzhen87/video-range-bar/issues"
-  }
+  },
+  "gitHead": "3db8aee9dd6538ede339ead79dd7ceefacbe7427"
 }
