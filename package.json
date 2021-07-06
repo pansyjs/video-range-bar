@@ -3,6 +3,8 @@
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean --yes",
     "docs:deploy": "gh-pages -d docs-dist",
     "build": "father-build",
     "deploy": "npm run docs:build && npm run docs:deploy",
