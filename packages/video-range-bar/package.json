@@ -1,6 +1,7 @@
 {
   "name": "video-range-bar",
   "version": "1.0.1",
+  "description": "video range for video",
   "main": "dist/index.js",
   "license": "MIT",
   "keywords": [
