@@ -1,0 +1,32 @@
+0 silly argv {
+0 silly argv   _: [ 'publish' ],
+0 silly argv   composed: 'publish',
+0 silly argv   lernaVersion: '3.18.4',
+0 silly argv   '$0': 'C:\\Users\\54636\\AppData\\Roaming\\npm\\node_modules\\lerna\\cli.js'
+0 silly argv }
+1 notice cli v3.18.4
+2 verbose rootPath E:\github-repo\video-range-bar
+3 info versioning independent
+4 verbose session d7a342a61447769e
+5 verbose user-agent lerna/3.18.4/node@v14.16.0+x64 (win32)
+6 info publish rooted leaf detected, skipping synthetic root lifecycles
+7 silly argv { _: [ 'publish' ], composed: 'publish', lernaVersion: '3.18.4' }
+8 verbose rootPath E:\github-repo\video-range-bar
+9 silly isAnythingCommitted
+10 verbose isAnythingCommitted 1
+11 silly currentBranch
+12 verbose currentBranch master
+13 silly remoteBranchExists
+14 silly isBehindUpstream
+15 error Error: Command failed: git remote update
+15 error fatal: unable to access 'https://github.com/chenguzhen87/video-range-bar.git/': Failed to connect to github.com port 443: Timed out
+15 error error: Could not fetch origin
+15 error
+15 error Fetching origin
+15 error
+15 error     at makeError (C:\Users\54636\AppData\Roaming\npm\node_modules\lerna\node_modules\execa\index.js:174:9)
+15 error     at Function.module.exports.sync (C:\Users\54636\AppData\Roaming\npm\node_modules\lerna\node_modules\execa\index.js:338:15)
+15 error     at Object.execSync (C:\Users\54636\AppData\Roaming\npm\node_modules\lerna\node_modules\@lerna\child-process\index.js:26:16)
+15 error     at updateRemote (C:\Users\54636\AppData\Roaming\npm\node_modules\lerna\node_modules\@lerna\version\lib\is-behind-upstream.js:26:16)
+15 error     at isBehindUpstream (C:\Users\54636\AppData\Roaming\npm\node_modules\lerna\node_modules\@lerna\version\lib\is-behind-upstream.js:11:3)
+15 error     at VersionCommand.initialize (C:\Users\54636\AppData\Roaming\npm\node_modules\lerna\node_modules\@lerna\version\index.js:150:9)
