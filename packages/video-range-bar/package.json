@@ -2,5 +2,35 @@
   "name": "video-range-bar",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "video",
+    "timeline",
+    "video-editing",
+    "video-clip",
+    "video-range-bar"
+  ],
+  "author": "chenguzhen87 <546369005@qq.com>",
+  "homepage": "https://github.com/chenguzhen87/video-range-bar#readme",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
+  "jsdelivr": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "lib": "dist",
+    "demo": "demo"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenguzhen87/video-range-bar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chenguzhen87/video-range-bar/issues"
+  }
 }
