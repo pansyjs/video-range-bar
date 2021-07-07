@@ -1,5 +1,0 @@
-40 error Error: Command failed: git push --follow-tags --no-verify origin master
-40 error fatal: unable to access 'https://github.com/chenguzhen87/video-range-bar.git/': Empty reply from server
-40 error
-40 error     at makeError (C:\Users\54636\AppData\Roaming\npm\node_modules\lerna\node_modules\execa\index.js:174:9)
-40 error     at C:\Users\54636\AppData\Roaming\npm\node_modules\lerna\node_modules\execa\index.js:278:16
