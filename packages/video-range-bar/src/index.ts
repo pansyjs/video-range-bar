@@ -1,5 +1,6 @@
 /**
  * 用于截取视频片段场景
+ * author: chenguzhen87
  */
 
 import './index.less';
@@ -276,6 +277,7 @@ export default class VideoRangeBar {
     }
   }
 
+  // 获取容器元素尺寸位置
   getBoundingClientRect() {
     const { left, right, width } = this.el.getBoundingClientRect();
     this.left = left;
