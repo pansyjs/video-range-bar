@@ -50,7 +50,7 @@ export default class VideoRangeBar {
       sliderOffsetLeft = 0,
       sliderOffsetRight = 0,
       theme = '#2d8cf0',
-      background = '#f2f2f2',
+      background = 'transparent',
       startLeftSlider = function () {},
       startRightSlider = function () {},
       moveLeftSlider = function () {},
