@@ -2,7 +2,7 @@
 
 ## Preview Picture
 
-![Preview Picture](/assets/preview.png)
+![Preview Picture](https://cdn.jsdelivr.net/gh/wangxingkang/pictures@latest/imgs/20210707183938.png)
 
 ## Usage
 
