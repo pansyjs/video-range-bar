@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example</title>
+    <script  src="../dist/index.umd.js"></script>
+    <style>
+        .container {
+            width: 800px;
+            margin: 0 auto;
+        }
+        #video {
+            display: block;
+            width: 100%;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+
+        .time {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .time-item {
+            flex: 1;
+            
+        }
+
+        .time-item span{
+            background: #f2f2f2;
+            padding: 4px 10px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <video id="video" controls="controls" src="//lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/byted-player-videos/1.0.0/xgplayer-demo.mp4"></video>
+        <div id="video-range-bar"></div>
+        <div class="time">
+            <div class="time-item">
+                截取开始时间<span class="time-start"></span>
+            </div>
+            <div class="time-item">
+                截取结束时间<span class="time-end"></span>
+            </div>
+            <div class="time-item">
+                截取总时长<span class="time-duration"></span>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function formatSeconds(value) {
+        let result = parseInt(value);
+        let h =
+            Math.floor(result / 3600) < 10
+            ? "0" + Math.floor(result / 3600)
+            : Math.floor(result / 3600);
+        let m =
+            Math.floor((result / 60) % 60) < 10
+            ? "0" + Math.floor((result / 60) % 60)
+            : Math.floor((result / 60) % 60);
+        let s =
+            Math.floor(result % 60) < 10
+            ? "0" + Math.floor(result % 60)
+            : Math.floor(result % 60);
+        result = `${h}:${m}:${s}`;
+        return result;
+        }
+
+       const video = document.querySelector('#video');
+       let totalTime = 0;
+       let startTime = 0;
+       let endTime = 0;
+       video.addEventListener('canplay',function(v){
+          const duration = video.duration;
+          document.querySelector('.time-start').innerHTML = formatSeconds(0);
+          document.querySelector('.time-duration').innerHTML = formatSeconds(duration);
+          document.querySelector('.time-end').innerHTML = formatSeconds(duration);
+          totalTime = duration;
+          endTime =duration;
+       })
+
+     const bar = new videoRangeBar({
+            id: "video-range-bar",
+            sliderWidth:"20",
+            startLeftSlider(value){
+                if(!video.paused){
+                    video.pause();
+                }
+               
+            },
+            startRightSlider(value){
+                if(!video.paused){
+                    video.pause();
+                }
+            },
+            moveLeftSlider(value){
+                startTime = totalTime * value;
+                document.querySelector('.time-start').innerHTML = formatSeconds(totalTime * value);
+            },
+            moveRightSlider(value){
+                endTime = totalTime * value;
+                document.querySelector('.time-end').innerHTML = formatSeconds(totalTime * value);
+                document.querySelector('.time-duration').innerHTML = formatSeconds(endTime - startTime);
+            }
+        })
+
+        console.log(bar)
+    </script>
+</body>
+</html>

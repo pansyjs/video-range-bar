@@ -1,12 +1,12 @@
 {
   "name": "video-range-bar",
   "version": "1.0.2",
-  "description": "video range for video",
+  "description": "video clips bar",
   "main": "dist/index.js",
   "license": "MIT",
   "keywords": [
     "video",
-    "timeline",
+    "video-slice",
     "video-editing",
     "video-clip",
     "video-range-bar"
@@ -19,7 +19,7 @@
   "types": "dist/index.d.ts",
   "directories": {
     "lib": "dist",
-    "demo": "demo"
+    "example": "example"
   },
   "files": [
     "dist"
