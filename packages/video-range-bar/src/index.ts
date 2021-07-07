@@ -215,7 +215,7 @@ export default class VideoRangeBar {
     if ('ontouchstart' in document) {
       sliderLeftBar.addEventListener(
         'touchstart',
-        function (e) {
+        function () {
           that.start(1);
         },
         false,
@@ -223,7 +223,7 @@ export default class VideoRangeBar {
 
       sliderRightBar.addEventListener(
         'touchstart',
-        function (e) {
+        function () {
           that.start(2);
         },
         false,
@@ -238,7 +238,7 @@ export default class VideoRangeBar {
       );
       document.addEventListener(
         'touchend',
-        function (e) {
+        function () {
           that.end();
         },
         false,
@@ -246,7 +246,7 @@ export default class VideoRangeBar {
     } else {
       sliderLeftBar.addEventListener(
         'mousedown',
-        function (e) {
+        function () {
           that.start(1);
         },
         false,
