@@ -2,7 +2,7 @@
 
 ## Preview Picture
 
-![Preview Picture](./preview.png)
+![Preview Picture](/assets/preview.png)
 
 ## Usage
 

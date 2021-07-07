@@ -12,7 +12,7 @@
     "video-range-bar"
   ],
   "author": "chenguzhen87 <546369005@qq.com>",
-  "homepage": "https://github.com/chenguzhen87/video-range-bar/blob/master/packages/video-range-bar",
+  "homepage": "https://github.com/chenguzhen87/video-range-bar",
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.umd.js",
   "jsdelivr": "dist/index.umd.js",
