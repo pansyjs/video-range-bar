@@ -1,0 +1,30 @@
+{
+  "name": "video-range-bar-vue",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "chenguzhen87 <546369005@qq.com>",
+  "homepage": "https://github.com/chenguzhen87/video-range-bar#readme",
+  "license": "ISC",
+  "main": "dist/video-range-bar-vue.js",
+  "module": "dist/video-range-bar-vue.module.js",
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenguzhen87/video-range-bar.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/chenguzhen87/video-range-bar/issues"
+  },
+  "dependencies": {
+    "rollup-plugin-vue": "5.1.9",
+    "vue-template-compiler": "^2.6.14"
+  }
+}

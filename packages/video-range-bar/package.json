@@ -34,5 +34,9 @@
   "bugs": {
     "url": "https://github.com/chenguzhen87/video-range-bar/issues"
   },
-  "gitHead": "3db8aee9dd6538ede339ead79dd7ceefacbe7427"
+  "gitHead": "3db8aee9dd6538ede339ead79dd7ceefacbe7427",
+  "dependencies": {
+    "rollup-plugin-vue": "5",
+    "vue-template-compiler": "^2.6.14"
+  }
 }
