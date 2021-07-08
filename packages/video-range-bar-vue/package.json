@@ -1,12 +1,21 @@
 {
   "name": "video-range-bar-vue",
   "version": "1.0.0",
-  "description": "> TODO: description",
+  "description": "video clips bar",
   "author": "chenguzhen87 <546369005@qq.com>",
   "homepage": "https://github.com/chenguzhen87/video-range-bar#readme",
-  "license": "ISC",
-  "main": "dist/video-range-bar-vue.js",
-  "module": "dist/video-range-bar-vue.module.js",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
+  "jsdelivr": "dist/index.umd.js",
+  "keywords": [
+    "video",
+    "video-slice",
+    "video-editing",
+    "video-clip",
+    "video-range-bar"
+  ],
   "directories": {
     "lib": "dist"
   },
