@@ -125,10 +125,12 @@ export default class VideoRangeBar {
 
     if (moveType == 1) {
       this.startLeftSlider(sliderOffsetLeft / width);
+      return;
     }
 
     if (moveType == 2) {
       this.startRightSlider((width - sliderOffsetRight) / width);
+      return;
     }
   }
 
