@@ -1,36 +1,29 @@
 {
-  "name": "video-range-bar-vue",
+  "name": "video-range-bar-react",
   "version": "1.0.0",
   "description": "video clips bar",
   "author": "chenguzhen87 <546369005@qq.com>",
   "homepage": "https://github.com/chenguzhen87/video-range-bar#readme",
-  "license": "MIT",
+  "license": "ISC",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.umd.js",
   "jsdelivr": "dist/index.umd.js",
-  "keywords": [
-    "video",
-    "video-slice",
-    "video-editing",
-    "video-clip",
-    "video-range-bar"
-  ],
   "directories": {
     "lib": "dist"
   },
   "files": [
     "dist"
   ],
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chenguzhen87/video-range-bar.git"
   },
   "bugs": {
     "url": "https://github.com/chenguzhen87/video-range-bar/issues"
-  },
-  "dependencies": {
-    "rollup-plugin-vue": "5.1.9",
-    "vue-template-compiler": "^2.6.14"
   }
 }

@@ -6,7 +6,7 @@
 
 ![Preview Picture](https://cdn.jsdelivr.net/gh/wangxingkang/pictures@latest/imgs/20210707183938.png)
 
-## Features
+## ✨ Features
 
 - 💻 使用 TypeScript 编写，提供完善的类型定义
 - 💻 支持移动和 pc 端
@@ -14,7 +14,7 @@
 - 📦 提供`cjs`、`es`、`umd`三种格式
 - 🎉 提供`Vue`、`React`组件包
 
-## Install
+## 🏗 Install
 
 ```
 // npm
@@ -24,7 +24,7 @@ npm install video-range-bar --save
 yarn add video-range-bar
 ```
 
-## Usage
+## 🔨 Usage
 
 ```html
 <div id="video-range-bar"></div>

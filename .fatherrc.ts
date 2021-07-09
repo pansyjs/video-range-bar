@@ -4,4 +4,5 @@ export default {
   cjs: 'rollup',
   umd: true,
   extraRollupPlugins: [vue()],
+  pkgs: ['video-range-bar'],
 };
