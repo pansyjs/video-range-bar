@@ -4,7 +4,7 @@
   "description": "video clips bar",
   "author": "chenguzhen87 <546369005@qq.com>",
   "homepage": "https://github.com/chenguzhen87/video-range-bar#readme",
-  "license": "ISC",
+  "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.umd.js",
