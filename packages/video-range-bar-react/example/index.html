@@ -89,7 +89,7 @@
           document.querySelector('.time-end').innerHTML = formatSeconds(duration);
           totalTime = duration;
           endTime =duration;
-       })
+       },{once: true})
 
        const config = {
         startLeftSlider(value){

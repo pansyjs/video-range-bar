@@ -80,12 +80,12 @@
                     moveLeftSlider(value){
                         startTime = totalTime * value;
                         video.currentTime  = startTime;
-                        document.querySelector('.time-start').innerHTML = formatSeconds(totalTime * value);
+                        document.querySelector('.time-start').innerHTML = formatSeconds(startTime);
                     },
                     moveRightSlider(value){
                         endTime = totalTime * value;
                         video.currentTime  = endTime;
-                        document.querySelector('.time-end').innerHTML = formatSeconds(totalTime * value);
+                        document.querySelector('.time-end').innerHTML = formatSeconds(endTime);
                         document.querySelector('.time-duration').innerHTML = formatSeconds(endTime - startTime);
                     }
                 }
@@ -122,7 +122,7 @@
           document.querySelector('.time-end').innerHTML = formatSeconds(duration);
           totalTime = duration;
           endTime =duration;
-       })
+       },{once: true})
         
     </script>
 </body>
