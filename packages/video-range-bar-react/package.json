@@ -25,5 +25,8 @@
   },
   "bugs": {
     "url": "https://github.com/chenguzhen87/video-range-bar/issues"
+  },
+  "dependencies": {
+    "video-range-bar": "^1.0.5"
   }
 }

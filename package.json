@@ -6,6 +6,7 @@
   ],
   "scripts": {
     "start": "dumi dev",
+    "build:js": "cross-env PACKAGE=video-range-bar && father-build",
     "docs:build": "dumi build",
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean --yes",
