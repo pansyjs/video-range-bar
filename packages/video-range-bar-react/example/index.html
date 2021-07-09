@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>example</title>
-    <script src="https://cdn.jsdelivr.net/npm/react@17.0.2/index.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/react@17.0.2/index.min.js"></script>
-    <script src="../dist/index.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="../dist/index.umd.js"></script>
     <style>
         .container {
             width: 800px;
@@ -91,32 +91,34 @@
           endTime =duration;
        })
 
-     const bar = new videoRangeBar({
-            id: "video-range-bar",
-            sliderWidth:"20",
-            startLeftSlider(value){
-                if(!video.paused){
-                    video.pause();
-                }
-               
-            },
-            startRightSlider(value){
-                if(!video.paused){
-                    video.pause();
-                }
-            },
-            moveLeftSlider(value){
-                startTime = totalTime * value;
-                document.querySelector('.time-start').innerHTML = formatSeconds(totalTime * value);
-            },
-            moveRightSlider(value){
-                endTime = totalTime * value;
-                document.querySelector('.time-end').innerHTML = formatSeconds(totalTime * value);
-                document.querySelector('.time-duration').innerHTML = formatSeconds(endTime - startTime);
+       const config = {
+        startLeftSlider(value){
+           
+            if(!video.paused){
+                video.pause();
             }
-        })
+            
+        },
+        startRightSlider(value){
+            if(!video.paused){
+                video.pause();
+            }
+        },
+        moveLeftSlider(value){
+            startTime = totalTime * value;
+            document.querySelector('.time-start').innerHTML = formatSeconds(startTime);
+            video.currentTime  = startTime;
+        },
+        moveRightSlider(value){
+            endTime = totalTime * value;
+            document.querySelector('.time-end').innerHTML = formatSeconds(endTime);
+            document.querySelector('.time-duration').innerHTML = formatSeconds(endTime - startTime);
+            video.currentTime  = endTime;
+        }
+       }
 
-        console.log(bar)
+       ReactDOM.render(React.createElement(videoRangeBarReact,{config}), document.getElementById("video-range-bar"))
+
     </script>
 </body>
 </html>

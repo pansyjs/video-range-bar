@@ -1,13 +1,20 @@
 import React, { useEffect, useRef } from 'react';
-import VideoRangeBar, { Config } from 'video-range-bar';
+import VideoRangeBarNative, { Config } from 'video-range-bar';
 
-const VideoRangeBarReact: React.FC<Config> = (params) => {
+export interface Props {
+  config: Config;
+}
+
+const VideoRangeBar: React.FC<Props> = ({ config = {} }) => {
   const container = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    new VideoRangeBar({ ...params, el: container.current as HTMLElement });
-  }, [params]);
+    new VideoRangeBarNative({
+      ...config,
+      el: container.current as HTMLElement,
+    });
+  }, []);
 
   return <div ref={container} />;
 };
 
-export default VideoRangeBarReact;
+export default VideoRangeBar;
