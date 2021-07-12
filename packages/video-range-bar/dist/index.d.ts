@@ -38,7 +38,7 @@ export default class VideoRangeBar {
   moveRightSlider: (value: number) => void;
   constructor(config: Config);
   createTemplate(): void;
-  start(moveType: number): void;
+  start(e: MouseEvent | TouchEvent, moveType: number): void;
   end(): void;
   move(e: MouseEvent | TouchEvent): void;
   addEventListener(): void;

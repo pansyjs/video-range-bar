@@ -184,7 +184,8 @@ var VideoRangeBar = /*#__PURE__*/ (function () {
     },
     {
       key: 'start',
-      value: function start(moveType) {
+      value: function start(e, moveType) {
+        e.stopPropagation();
         this.moveType = moveType;
         var sliderOffsetLeft = this.sliderOffsetLeft,
           sliderOffsetRight = this.sliderOffsetRight,
@@ -192,10 +193,12 @@ var VideoRangeBar = /*#__PURE__*/ (function () {
 
         if (moveType == 1) {
           this.startLeftSlider(sliderOffsetLeft / width);
+          return;
         }
 
         if (moveType == 2) {
           this.startRightSlider((width - sliderOffsetRight) / width);
+          return;
         }
       }, // 鼠标松开或触摸结束
     },
@@ -282,15 +285,15 @@ var VideoRangeBar = /*#__PURE__*/ (function () {
         if ('ontouchstart' in document) {
           sliderLeftBar.addEventListener(
             'touchstart',
-            function () {
-              that.start(1);
+            function (e) {
+              that.start(e, 1);
             },
             false,
           );
           sliderRightBar.addEventListener(
             'touchstart',
-            function () {
-              that.start(2);
+            function (e) {
+              that.start(e, 2);
             },
             false,
           );
@@ -311,15 +314,15 @@ var VideoRangeBar = /*#__PURE__*/ (function () {
         } else {
           sliderLeftBar.addEventListener(
             'mousedown',
-            function () {
-              that.start(1);
+            function (e) {
+              that.start(e, 1);
             },
             false,
           );
           sliderRightBar.addEventListener(
             'mousedown',
-            function () {
-              that.start(2);
+            function (e) {
+              that.start(e, 2);
             },
             false,
           );
