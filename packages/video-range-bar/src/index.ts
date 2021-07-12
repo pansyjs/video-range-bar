@@ -119,7 +119,8 @@ export default class VideoRangeBar {
   }
 
   // 鼠标按下或触摸开始
-  start(moveType: number) {
+  start(e: MouseEvent | TouchEvent, moveType: number) {
+    e.stopPropagation();
     this.moveType = moveType;
     const { sliderOffsetLeft, sliderOffsetRight, width } = this;
 
@@ -217,16 +218,16 @@ export default class VideoRangeBar {
     if ('ontouchstart' in document) {
       sliderLeftBar.addEventListener(
         'touchstart',
-        function () {
-          that.start(1);
+        function (e) {
+          that.start(e, 1);
         },
         false,
       );
 
       sliderRightBar.addEventListener(
         'touchstart',
-        function () {
-          that.start(2);
+        function (e) {
+          that.start(e, 2);
         },
         false,
       );
@@ -248,16 +249,16 @@ export default class VideoRangeBar {
     } else {
       sliderLeftBar.addEventListener(
         'mousedown',
-        function () {
-          that.start(1);
+        function (e) {
+          that.start(e, 1);
         },
         false,
       );
 
       sliderRightBar.addEventListener(
         'mousedown',
-        function () {
-          that.start(2);
+        function (e) {
+          that.start(e, 2);
         },
         false,
       );
