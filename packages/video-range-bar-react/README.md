@@ -17,7 +17,7 @@ yarn add video-range-bar-react
 ## 🔨 Usage
 
 ```tsx
-import React from 'react';
+import React, { useState } from 'react';
 import VideoRangeBar from 'video-range-bar-react';
 
 export default () => {
