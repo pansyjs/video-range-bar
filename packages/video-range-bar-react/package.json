@@ -1,6 +1,6 @@
 {
   "name": "video-range-bar-react",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "video clips bar",
   "author": "chenguzhen87 <546369005@qq.com>",
   "homepage": "https://github.com/chenguzhen87/video-range-bar#readme",
@@ -28,6 +28,6 @@
     "url": "https://github.com/chenguzhen87/video-range-bar/issues"
   },
   "dependencies": {
-    "video-range-bar": "^1.0.7"
+    "video-range-bar": "^1.0.8"
   }
 }
