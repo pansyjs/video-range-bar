@@ -349,67 +349,63 @@
           var that = this;
           document.addEventListener('resize', function () {
             that.getBoundingClientRect();
-          }); // 设备兼容
-
-          if ('ontouchstart' in document) {
-            sliderLeftBar.addEventListener(
-              'touchstart',
-              function (e) {
-                that.start(e, 1);
-              },
-              false,
-            );
-            sliderRightBar.addEventListener(
-              'touchstart',
-              function (e) {
-                that.start(e, 2);
-              },
-              false,
-            );
-            document.addEventListener(
-              'touchmove',
-              function (e) {
-                that.move(e);
-              },
-              false,
-            );
-            document.addEventListener(
-              'touchend',
-              function () {
-                that.end();
-              },
-              false,
-            );
-          } else {
-            sliderLeftBar.addEventListener(
-              'mousedown',
-              function (e) {
-                that.start(e, 1);
-              },
-              false,
-            );
-            sliderRightBar.addEventListener(
-              'mousedown',
-              function (e) {
-                that.start(e, 2);
-              },
-              false,
-            );
-            document.addEventListener(
-              'mousemove',
-              function (e) {
-                that.move(e);
-              },
-              false,
-            );
-            document.addEventListener(
-              'mouseup',
-              function () {
-                that.end();
-              },
-              false,
-            );
-          }
+          });
+          sliderLeftBar.addEventListener(
+            'touchstart',
+            function (e) {
+              that.start(e, 1);
+            },
+            false,
+          );
+          sliderRightBar.addEventListener(
+            'touchstart',
+            function (e) {
+              that.start(e, 2);
+            },
+            false,
+          );
+          document.addEventListener(
+            'touchmove',
+            function (e) {
+              that.move(e);
+            },
+            false,
+          );
+          document.addEventListener(
+            'touchend',
+            function () {
+              that.end();
+            },
+            false,
+          );
+          sliderLeftBar.addEventListener(
+            'mousedown',
+            function (e) {
+              that.start(e, 1);
+            },
+            false,
+          );
+          sliderRightBar.addEventListener(
+            'mousedown',
+            function (e) {
+              that.start(e, 2);
+            },
+            false,
+          );
+          document.addEventListener(
+            'mousemove',
+            function (e) {
+              that.move(e);
+            },
+            false,
+          );
+          document.addEventListener(
+            'mouseup',
+            function () {
+              that.end();
+            },
+            false,
+          );
         }, // 获取容器元素尺寸位置
       },
       {
